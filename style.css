@@ -1,0 +1,51 @@
+/* Estilos generales */
+
+.body {
+
+}
+
+.container {
+
+}
+
+/*estilo para el boton sugiero btn*/
+.btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Estilos específicos para el formulario de inicio de sesión */
+
+#login {
+    
+}
+
+#password-input {
+   
+}
+
+/* Estilos específicos para la sección de transacciones */
+
+#transactions {
+    
+}
+
+#balance  {
+    
+    
+}
+
+#deposit-input{
+
+}
+#withdraw-input {
+    
+    
+}
+
+.hidden {
+    display: none;
+}
