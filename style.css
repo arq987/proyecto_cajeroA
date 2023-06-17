@@ -1,20 +1,19 @@
 /* Estilos generales */
 
-.body {
-
+body {
+    
 }
 
 .container {
-
+   
 }
 
-/*estilo para el boton sugiero btn*/
-.btn {
-    padding: 10px 20px;
-    font-size: 16px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+.form-group {
+   
+}
+
+.btn-danger {
+    
 }
 
 /* Estilos específicos para el formulario de inicio de sesión */
@@ -24,7 +23,7 @@
 }
 
 #password-input {
-   
+    
 }
 
 /* Estilos específicos para la sección de transacciones */
@@ -33,19 +32,29 @@
     
 }
 
-#balance  {
-    
+#balance p {
     
 }
 
-#deposit-input{
-
-}
-#withdraw-input {
+#deposit-input,
+#withdraw-input,
+#transfer-input {
     
     
 }
 
 .hidden {
-    display: none;
+    
+}
+
+#logout-btn {
+    
+}
+
+@media () {
+    #logout-btn {
+        
+        
+        
+    }
 }
