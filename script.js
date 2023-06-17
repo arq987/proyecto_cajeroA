@@ -20,7 +20,7 @@ function showOptions() {
 }
 
 // Función para depositar dinero
-function deposit() {                     
+function deposit() {
     // Limpiar el campo de entrada
 }
 
@@ -32,7 +32,7 @@ function withdraw() {
 }
 
 // Función para transferir saldo entre cuentas
-function transfer() {                                                     
+function transfer() {
     // Limpiar los campos de entrada
 
     // Restablecer el valor del select de cuenta destinataria
