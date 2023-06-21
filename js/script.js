@@ -1,8 +1,8 @@
 // Datos de las cuentas
-var cuentas = [
-    { nombre: "Persona 1", saldo: 200 },
-    { nombre: "Persona 2", saldo: 290 },
-    { nombre: "Persona 3", saldo: 67 }
+let cuentas = [
+    { nombre: "Mali", saldo: 200, password: "1234"},
+    { nombre: "Gera", saldo: 290, password: "4321" },
+    { nombre: "Maui", saldo: 67, password: "1342" }
 ];
 
 // Variables globales
@@ -11,6 +11,19 @@ var selectedAccount = null;
 // Función para validar el password y mostrar opciones si es correcto
 function login() {
     // Validar el password (puedes implementar tu propia lógica de validación aquí)
+    let usuario = document.getElementById('user').value;
+    let password = document.getElementById('password-input').value;
+    for (let i = 0; i < cuentas.length; i++) {
+        // Se busca que coincidan el usuario y contraseña
+        if (usuario === cuentas[i].nombre && password === cuentas[i].password) {
+            alert("Ingresaste");
+            return true; 
+        }else{
+            alert("usuario y/o contraseña no coinciden")
+        }
+    }
+    return false;
+    
 }
 
 // Función para mostrar las opciones disponibles

@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cajero Automático</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./css/style.css">
 </head>
 
 <body>
@@ -14,18 +14,14 @@
         <div id="login">
             <h2>Inicio de Sesión</h2>
             <div class="form-group">
-                <label for="account-select">Selecciona una cuenta:</label>
-                <select id="account-select" class="form-control">
-                    <option value="0">Persona 1</option>
-                    <option value="1">Persona 2</option>
-                    <option value="2">Persona 3</option>
-                </select>
+                <label for="user">Selecciona una cuenta:</label>
+                <input type="text" id="user">
             </div>
             <div class="form-group">
                 <label for="password-input">Contraseña:</label>
                 <input type="password" id="password-input" class="form-control">
             </div>
-            <button id="login-btn" class="btn btn-danger">Iniciar Sesión</button>
+            <button type="submit" id="login-btn" class="btn btn-danger" onclick="login()">Iniciar Sesión</button>
         </div>
 
         <div id="transactions" class="hidden">
@@ -60,7 +56,7 @@
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <script src="./js/script.js"></script>
 </body>
 
 </html>
