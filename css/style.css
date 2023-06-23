@@ -1,60 +1,70 @@
 /* Estilos generales */
 
 body {
-    
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
 }
 
 .container {
-   
+    max-width: 500px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 .form-group {
-   
+    margin-bottom: 20px;
 }
 
 .btn-danger {
-    
+    background-color: #dc3545;
+    color: #fff;
 }
 
 /* Estilos específicos para el formulario de inicio de sesión */
 
 #login {
-    
+    text-align: center;
 }
 
 #password-input {
-    
+    margin-top: 10px;
 }
 
 /* Estilos específicos para la sección de transacciones */
 
 #transactions {
-    
+    display: none;
 }
 
 #balance p {
-    
+    font-size: 18px;
+    font-weight: bold;
 }
 
 #deposit-input,
 #withdraw-input,
 #transfer-input {
-    
-    
+    width: 80%;
+    margin-right: 10px;
 }
 
 .hidden {
-    
+    display: none;
 }
 
 #logout-btn {
-    
+    margin-top: 10px;
 }
 
-@media () {
+@media (min-width: 576px) {
     #logout-btn {
-        
-        
-        
+        float: right;
+        margin-top: 0;
+        margin-left: 10px;
     }
 }
