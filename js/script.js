@@ -17,6 +17,7 @@ function login() {
         // Se busca que coincidan el usuario y contraseña
         if (usuario === cuentas[i].nombre && password === cuentas[i].password) {
             alert("Ingresaste");
+            document.getElementById('balance-amount').innerHTML = `${cuentas[i].saldo} USD`;
             return true; 
         }else{
             alert("usuario y/o contraseña no coinciden")
@@ -28,13 +29,14 @@ function login() {
 
 // Función para mostrar las opciones disponibles
 function showOptions() {
+        // Limpiar los campos de entrada
 
-    // Limpiar los campos de entrada
 }
 
 // Función para depositar dinero
 function deposit() {
     // Limpiar el campo de entrada
+
 }
 
 // Función para retirar dinero
