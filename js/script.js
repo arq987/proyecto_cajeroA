@@ -1,8 +1,8 @@
 // Datos de las cuentas
 let cuentas = [
-    { nombre: "Mali", saldo: 200, password: "1234"},
-    { nombre: "Gera", saldo: 290, password: "4321" },
-    { nombre: "Maui", saldo: 67, password: "1342" }
+    { nombre: "Mali", saldo: 200, password: "1234", logged: false},
+    { nombre: "Gera", saldo: 290, password: "4321", logged: false},
+    { nombre: "Maui", saldo: 67, password: "1342", logged: false}
 ];
 
 // Variables globales
@@ -14,17 +14,15 @@ function login() {
     let usuario = document.getElementById('user').value;
     let password = document.getElementById('password-input').value;
     for (let i = 0; i < cuentas.length; i++) {
-        // Se busca que coincidan el usuario y contraseña
         if (usuario === cuentas[i].nombre && password === cuentas[i].password) {
-            alert("Ingresaste");
+            cuentas[i].logged = true;
             document.getElementById('balance-amount').innerHTML = `${cuentas[i].saldo} USD`;
-            return true; 
-        }else{
-            alert("usuario y/o contraseña no coinciden")
+            alert("Ingresaste");
+            break;
+        } else {
+            alert("Usuario y/o contraseña no coinciden");
         }
     }
-    return false;
-    
 }
 
 // Función para mostrar las opciones disponibles
@@ -36,13 +34,29 @@ function showOptions() {
 // Función para depositar dinero
 function deposit() {
     // Limpiar el campo de entrada
-
+    let deposit = parseInt(document.getElementById('deposit-input').value)
+    for (let i = 0; i < cuentas.length; i++){
+        if(cuentas[i].logged == true){
+            if(cuentas[i].saldo > 10 && cuentas[i].saldo < 990){
+                let resultado = cuentas[i].saldo += deposit; 
+                alert(`Nuevo saldo ${resultado}`)
+            }
+        }
+    }
 }
 
 // Función para retirar dinero
 function withdraw() {
-
     // Limpiar el campo de entrada
+    let deposit = parseInt(document.getElementById('withdraw-input').value)
+    for (let i = 0; i < cuentas.length; i++){
+        if(cuentas[i].logged == true){
+            if(cuentas[i].saldo > 10){
+                let resultado = cuentas[i].saldo -= deposit; 
+                alert(`Nuevo saldo ${resultado}`)
+            }
+        }
+    }
 
 }
 
