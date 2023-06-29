@@ -5,33 +5,27 @@ let cuentas = [
     { nombre: "Maui", saldo: 67, password: "1342", logged: false}
 ];
 
-// Variables globales
-var selectedAccount = null;
-
-// Función para validar el password y mostrar opciones si es correcto
+// Función para realizar el inicio de sesión
 function login() {
-    // Validar el password (puedes implementar tu propia lógica de validación aquí)
-    let usuario = document.getElementById('user').value;
-    let password = document.getElementById('password-input').value;
+    const usuarioInput = document.getElementById("user").value;
+    const passwordInput = document.getElementById("password-input").value;
+
     for (let i = 0; i < cuentas.length; i++) {
-        if (usuario === cuentas[i].nombre && password === cuentas[i].password) {
+        if (usuarioInput === cuentas[i].nombre && passwordInput === cuentas[i].password) {
             cuentas[i].logged = true;
-            document.getElementById('balance-amount').innerHTML = `${cuentas[i].saldo} USD`;
-            alert("Ingresaste");
+            document.getElementById("account-name").textContent = cuentas[i].nombre;
+            document.getElementById("balance-amount").textContent = cuentas[i].saldo;
+            document.getElementById("login").style.display = "none";
+            document.getElementById("transactions").style.display = "block";
             break;
         } else {
-            alert("Usuario y/o contraseña no coinciden");
+            alert("Usuario y/o contraseña incorrectos. Por favor, intenta nuevamente.");
         }
     }
 }
 
-// Función para mostrar las opciones disponibles
-function showOptions() {
-        // Limpiar los campos de entrada
-
-}
-
 // Función para depositar dinero
+
 function deposit() {
     // Limpiar el campo de entrada
     let deposit = parseInt(document.getElementById('deposit-input').value)
@@ -59,21 +53,19 @@ function withdraw() {
     }
 
 }
-
 // Función para transferir saldo entre cuentas
 function transfer() {
-    // Limpiar los campos de entrada
-
-    // Restablecer el valor del select de cuenta destinataria
-
+   
 }
 
-// Función para cerrar sesión y regresar al inicio de sesión
+// Función para cerrar sesión
 function logout() {
-
-    // Limpiar los campos de entrada
-
-    // Restablecer el valor del select de cuenta destinataria
+    
 }
 
 // Event Listeners
+document.getElementById("login-btn").addEventListener("click", login);
+document.getElementById("deposit-btn").addEventListener("click", deposit);
+document.getElementById("withdraw-btn").addEventListener("click", withdraw);
+document.getElementById("transfer-btn").addEventListener("click", transfer);
+document.getElementById("logout-btn").addEventListener("click", logout);
