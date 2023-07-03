@@ -10,50 +10,47 @@
 </head>
 
 <body>
-    <h1>Cajero Automático</h1>
     <div class="containerLogin">
         <div id="login">
             <h2>Inicio de Sesión</h2>
-            <div class="form-group">
+            <div >
                 <label for="user">Usuario</label>
-                <input type="text" id="user" class="form-control">
-            </div>
-            <div class="form-group">
+                <input type="text" id="user" class="form-control mb-3" placeholder="Usuario">
                 <label for="password-input">Contraseña</label>
-                <input type="password" id="password-input" class="form-control">
+                <input type="password" id="password-input" class="form-control mb-3" placeholder="Contraseña">
             </div>
-            <button type="submit" id="login-btn" class="btn btn-success" onclick="login()">Iniciar Sesión</button>
+            <button type="submit" id="login-btn" class="btn btn-primary" onclick="login()">Iniciar Sesión</button>
         </div>
     </div>
         <div id="transactions" class="hidden">
-            <h2>Bienvenido, <span id="account-name"></span></h2>
+            <h2>Bienvenido(a), <span id="account-name"></span></h2>
             <div id="balance">
-                <p>Saldo actual: <span id="balance-amount"></span></p>
+                <span id="balance-amount" class="badge badge-pill badge-success"></span>
             </div>
             <div class="form-group">
                 <label for="deposit-input">Monto a Depositar:</label>
-                <input type="number" id="deposit-input" class="form-control">
+                <input type="number" id="deposit-input" class="form-control mb-2">
+                <button id="deposit-btn" class="btn btn-success" onclick="deposit()">Depositar</button>
             </div>
-            <button id="deposit-btn" class="btn btn-danger" onclick="deposit()">Depositar</button>
+            
             <div class="form-group">
                 <label for="withdraw-input">Monto a Retirar:</label>
-                <input type="number" id="withdraw-input" class="form-control">
+                <input type="number" id="withdraw-input" class="form-control mb-2">
+                <button id="withdraw-btn" class="btn btn-danger" onclick="withdraw()">Retirar</button>
             </div>
-            <button id="withdraw-btn" class="btn btn-danger" onclick="withdraw()">Retirar</button>
             <div class="form-group">
                 <label for="transfer-input">Monto a Transferir:</label>
-                <input type="number" id="transfer-input" class="form-control">
-            </div>
-            <div class="form-group">
+                <input type="number" id="transfer-input" class="form-control mb-2">
                 <label for="recipient-account-select">Cuenta Destinataria:</label>
-                <select id="recipient-account-select" class="form-control">
+                <select id="recipient-account-select" class="form-control mb-2">
                     <option value="0">Persona 1</option>
                     <option value="1">Persona 2</option>
                     <option value="2">Persona 3</option>
                 </select>
+                <button id="transfer-btn" class="btn btn-danger">Transferir</button>
             </div>
-            <button id="transfer-btn" class="btn btn-danger">Transferir</button>
-            <button id="logout-btn" class="btn btn-danger">Salir</button>
+            
+            <button id="logout-btn" class="btn btn-danger" onclick="logout()">Salir</button>
         </div>
     <script src="./js/script.js"></script>
 </body>
