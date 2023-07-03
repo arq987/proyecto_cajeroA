@@ -43,11 +43,9 @@
                 <input type="number" id="transfer-input" class="form-control mb-2">
                 <label for="recipient-account-select">Cuenta Destinataria:</label>
                 <select id="recipient-account-select" class="form-control mb-2">
-                    <option value="0">Persona 1</option>
-                    <option value="1">Persona 2</option>
-                    <option value="2">Persona 3</option>
+                    <option value="">Seleccionar cuenta destino</option>
                 </select>
-                <button id="transfer-btn" class="btn btn-danger">Transferir</button>
+                <button id="transfer-btn" class="btn btn-danger" onclick="transfer()">Transferir</button>
             </div>
             
             <button id="logout-btn" class="btn btn-danger" onclick="logout()">Salir</button>

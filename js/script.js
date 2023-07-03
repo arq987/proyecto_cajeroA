@@ -20,25 +20,32 @@ function login() {
             break;
         }
     }
+    
     if (logueado) {
+        
+        let cuentaLogueada = document.getElementById("recipient-account-select");
+        cuentaLogueada.innerHTML = "";
+        //Valida cuentas no logueadas para agregar en el select de cuentas a transferir
+        for (let i = 0; i < cuentas.length; i++) {
+            if (!cuentas[i].logged) {
+              const option = document.createElement("option");
+              option.value = i.toString();
+              option.textContent = cuentas[i].nombre;
+              cuentaLogueada.appendChild(option);
+            }
+          }
+          //Muestra el formulario de transacciones y oculta el login
         document.getElementById("login").style.display = "none";
         document.getElementById("transactions").style.display = "block";
         return true;
     } else {
+        //Muestra alerta si no coincide el usuario y/o contraseña
         alert("Usuario y/o contraseña incorrectos. Por favor, intenta nuevamente.");
         return false;
     }
 
 
 }
-
-
-// Función para mostrar las opciones disponibles
-function showOptions() {
-    // Limpiar los campos de entrada
-
-}
-
 // Función para depositar dinero
 
 function deposit() {
@@ -62,7 +69,7 @@ function deposit() {
 
 // Función para retirar dinero
 function withdraw() {
-    // Limpiar el campo de entrada
+   
     let withdraw = parseInt(document.getElementById('withdraw-input').value)
     for (let i = 0; i < cuentas.length; i++) {
         if (cuentas[i].logged == true && withdraw > 0) {
@@ -82,20 +89,43 @@ function withdraw() {
 }
 // Función para transferir saldo entre cuentas
 function transfer() {
-
-}
+    let montoTransferir = parseInt(document.getElementById('transfer-input').value);
+    let cuentaTranferir = document.getElementById('recipient-account-select').value;
+  
+    let cuentaLogueada = null;
+    for (let i = 0; i < cuentas.length; i++) {
+      if (cuentas[i].logged) {
+        cuentaLogueada = cuentas[i];
+        break;
+      }
+    }
+  
+    if (cuentaLogueada && montoTransferir > 0 && montoTransferir <= 990 && cuentaLogueada.saldo - montoTransferir >= 10) {
+      let cuentaTransferencia = cuentas[cuentaTranferir];
+  
+      if (cuentaTransferencia && cuentaTransferencia.saldo + montoTransferir <= 990) {
+        cuentaLogueada.saldo -= montoTransferir;
+        cuentaTransferencia.saldo += montoTransferir;
+  
+        document.getElementById("balance-amount").textContent = "Saldo actual: $" + cuentaLogueada.saldo;
+        document.getElementById('transfer-input').value = "";
+      } else {
+        alert("La cuenta destino supera el monto máximo de $990");
+      }
+    }
+  }
+  
 
 // Función para cerrar sesión
 function logout() {
+    for (let i = 0; i < cuentas.length; i++) {
+        if (cuentas[i].logged) {
+          cuentas[i].logged = false;
+          break;
+        }
+      }
     document.getElementById("login").style.display = "block";
     document.getElementById("transactions").style.display = "none";
     document.getElementById("user").value = "";
     document.getElementById("password-input").value = "";
 }
-
-// Event Listeners
-// document.getElementById("login-btn").addEventListener("click", login);
-// document.getElementById("deposit-btn").addEventListener("click", deposit);
-// document.getElementById("withdraw-btn").addEventListener("click", withdraw);
-// document.getElementById("transfer-btn").addEventListener("click", transfer);
-// document.getElementById("logout-btn").addEventListener("click", logout);
