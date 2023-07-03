@@ -2,35 +2,48 @@
 
 body {
     font-family: Arial, sans-serif;
-    background-color: #f2f2f2;
+    background-color: #e0d2d2;
     margin: 0;
     padding: 0;
 }
-
-.container {
-    max-width: 500px;
-    margin: 0 auto;
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+h1 {
+    text-align: center;
+    font: 4em sans-serif;
+    margin-top: 2vh;
+    color: darkblue;
+}
+.containerLogin {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 10px;
+    display: flex;
+    justify-content: center;
 }
 
-.form-group {
-    margin-bottom: 20px;
-}
-
-.btn-danger {
-    background-color: #dc3545;
-    color: #fff;
+.btn-success {
+    border: none;
+    border-radius: 25px;
+    margin-top: 2vh;
 }
 
 /* Estilos específicos para el formulario de inicio de sesión */
 
 #login {
     text-align: center;
+    flex-direction: column;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #faf5f5;
+    padding: 5vh;
+    border-radius: 25px;
 }
-
+div > h2 {
+    margin-bottom: 5vh;
+    font: 50px bold;
+}
 #password-input {
     margin-top: 10px;
 }

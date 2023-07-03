@@ -24,6 +24,13 @@ function login() {
     }
 }
 
+
+// Función para mostrar las opciones disponibles
+function showOptions() {
+        // Limpiar los campos de entrada
+
+}
+
 // Función para depositar dinero
 
 function deposit() {
